@@ -8,6 +8,7 @@ let pageSize = 9;
 let allProducts = [];
 let filteredProducts = [];
 
+
 // Product fetch and error checking
 const fetchProducts = async () => {
   try {
@@ -48,6 +49,15 @@ const renderProducts = () => {
       (product.price * product.discountPercentage) / 100
     ).toFixed(2);
 
+    const averageRating =
+    product.reviews && product.reviews.length
+      ? (
+          product.reviews.reduce((sum, review) => sum + review.rating, 0) /
+          product.reviews.length
+        ).toFixed(1)
+      : "No ratings yet";
+
+
     const smallDescription =
       product.description.length > 50
         ? product.description.slice(0, 50) + "..."
@@ -62,6 +72,7 @@ const renderProducts = () => {
         <strong>$${discountPrice}</strong> 
         <span class="original-price">$${product.price}</span>
       </p>
+           <p class="product-rating">Average Rating: ${averageRating}</p>
       <p class="product-description">${smallDescription}</p>
     `;
 
@@ -117,7 +128,7 @@ filterSelect.addEventListener("change", () => {
   if (selectedFilter === "price") {
     sortedProducts.sort((a, b) => a.price - b.price);
   } else if (selectedFilter === "name") {
-    sortedProducts.sort((a, b) => a.title.localeCompare(b.title));
+    sortedProducts.sort((a, b) => b.title.localeCompare(a.title));
   }
 
   filteredProducts = sortedProducts;
