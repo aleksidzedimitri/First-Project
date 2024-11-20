@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar">
+      <img src="./assets/images/logo-colored.png" alt="logo" class="logo" />
+      <div class="searchbar">
+        <input
+          type="search"
+          placeholder="Search products..."
+          class="search-input"
+        />
+        <select name="category" id="category" class="category">
+          <option value="value1">Choose Category</option>
+          <option value="phones">Phones</option>
+          <option value="accessories">Accessories</option>
+          <option value="brands">Brands</option>
+        </select>
+        <button class="button" type="button">Search</button>
+    </div>
+    <!-- ფუნქციონალის არ ქონის გამო შეიძლება 1 იან სურათად გადმოტანა ცალკეული Icon-ების ნაცვლად -->
+      <ul class="nav-list">
+        <img src="./assets/images/Actions.png" alt="nav-actions" />
+      </ul>
+    </nav>
+
+    <main class="main">
+      <aside class="sidebar">
+        <h3>Category</h3>
+        <ul>
+          <li>Mobile Accessories</li>
+          <li>Electronics</li>
+          <li>Smartphones</li>
+          <li>Modern Tech</li>
+        </ul>
+
+        <h3>Brands</h3>
+        <ul>
+          <li><input type="checkbox">Samsung</li>
+          <li><input type="checkbox">Apple</li>
+          <li><input type="checkbox">Huawei</li>
+          <li><input type="checkbox">Poco</li>
+        </ul>
+
+        <h3>Features</h3>
+        <ul>
+          <li><input type="checkbox">Metallic</li>
+          <li><input type="checkbox">Plastic cover</li>
+          <li><input type="checkbox">8GM Ram</li>
+          <li><input type="checkbox">Super Power</li>
+          <li><input type="checkbox">Large Memory</li>
+
+        </ul>
+      </aside>
+      <section class="main-content">
+        <div class="filter">
+            <p>12,911 items in Mobile accessory</p>
+            <div class="filter-div">
+              <div class="checkbox-input">
+              <input type="checkbox" name="verified" id="verified" />
+              <p for="verified">Verified only</p>
+            </div>
+              <select name="filter" id="filter-select" >
+                  <option value="value1">Choose Filter</option>
+                  <option value="price">Sort by Price</option>
+                  <option value="name">Sort by Name</option>
+              </select>
+              <img src="./assets/images/btn-group.png" alt="filter-btn">
+            </div>
+          </div>
+          <div class="products" id="product-grid">
+            
+          </div>
+        </div>
+        <div id="pagination">
+        </div>
+      </section>
+   
+    </main>
+    <footer class="footer">
+      <section class="newsletter">
+        <h3>Subscribe to our newsletter</h3>
+        <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+        <div class="footer-mail">
+        <input type="email" placeholder="Email" />
+        <button class="button-footer">Subscribe</button>
+        </div>
+      </section>
+    </footer>
+    <script src="func.js"></script>
+  </body>
+</html>
